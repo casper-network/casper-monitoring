@@ -1,2 +1,5 @@
-# casper-monitoring
-Examples of how to monitor a node.
+requires docker docker-compose
+
+links to install
+
+docker-compose up -d
