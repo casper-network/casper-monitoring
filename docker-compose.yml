@@ -20,6 +20,7 @@ services:
   # login credentials are admin/admin
   grafana:
     image: grafana/grafana:latest
+    env_file: ./monitoring/grafana/grafana.conf
     container_name: grafana
     volumes:
       - ${PWD}/monitoring/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
