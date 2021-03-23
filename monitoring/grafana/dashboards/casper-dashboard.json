@@ -48,166 +48,6 @@
         "defaults": {
           "custom": {},
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 0,
-        "y": 1
-      },
-      "id": 56,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.4.5",
-      "targets": [
-        {
-          "expr": "count(up{job=\"node\"})",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "",
-          "queryType": "randomWalk",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Network Node Count",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 10,
-        "x": 6,
-        "y": 1
-      },
-      "hiddenSeries": false,
-      "id": 75,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sort": "current",
-        "sortDesc": false,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.4.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "expr": "peers{job=\"node\"}",
-          "format": "time_series",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "peers: {{instance}}",
-          "queryType": "randomWalk",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Active Node Peer Count",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Count",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
           "noValue": "0",
           "thresholds": {
             "mode": "absolute",
@@ -223,9 +63,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 2,
+        "w": 5,
         "x": 0,
-        "y": 6
+        "y": 1
       },
       "id": 10,
       "options": {
@@ -246,7 +86,7 @@
       "pluginVersion": "7.4.5",
       "targets": [
         {
-          "expr": "count(chain_height{job=\"node\"})",
+          "expr": "peers{job=\"node\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -256,7 +96,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Current Active Nodes",
+      "title": "Peers",
       "type": "stat"
     },
     {
@@ -279,9 +119,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 2,
-        "x": 2,
-        "y": 6
+        "w": 5,
+        "x": 5,
+        "y": 1
       },
       "id": 12,
       "options": {
@@ -335,9 +175,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 2,
-        "x": 4,
-        "y": 6
+        "w": 6,
+        "x": 10,
+        "y": 1
       },
       "id": 14,
       "options": {
@@ -372,106 +212,60 @@
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "fill": 0,
-      "fillGradient": 0,
       "gridPos": {
         "h": 5,
-        "w": 10,
-        "x": 6,
-        "y": 6
+        "w": 8,
+        "x": 16,
+        "y": 1
       },
-      "hiddenSeries": false,
-      "id": 88,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 2,
-      "nullPointMode": "connected",
+      "id": 92,
       "options": {
-        "alertThreshold": true
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
       },
-      "percentage": false,
       "pluginVersion": "7.4.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
       "targets": [
         {
-          "expr": "count(chain_height{job=\"node\"})",
-          "format": "time_series",
-          "hide": false,
-          "instant": false,
+          "expr": "finalization_time{job=\"node\"}/1000 > 0",
+          "instant": true,
           "interval": "",
-          "legendFormat": "active: {{hostname}}",
+          "legendFormat": "",
           "queryType": "randomWalk",
-          "refId": "B"
+          "refId": "A"
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
-      "title": "Active Node Count",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "Count",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "title": "Finalization Time",
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -480,7 +274,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 6
       },
       "id": 34,
       "panels": [],
@@ -505,7 +299,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 12
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 4,
@@ -609,7 +403,7 @@
         "h": 5,
         "w": 5,
         "x": 6,
-        "y": 12
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 50,
@@ -710,7 +504,7 @@
         "h": 5,
         "w": 6,
         "x": 11,
-        "y": 12
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 2,
@@ -811,7 +605,7 @@
         "h": 5,
         "w": 6,
         "x": 17,
-        "y": 12
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 83,
@@ -912,7 +706,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 17
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 85,
@@ -1029,7 +823,7 @@
         "h": 5,
         "w": 5,
         "x": 6,
-        "y": 17
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 87,
@@ -1144,7 +938,7 @@
         "h": 5,
         "w": 6,
         "x": 11,
-        "y": 17
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 67,
@@ -1230,7 +1024,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 17
       },
       "id": 36,
       "panels": [],
@@ -1263,7 +1057,7 @@
         "h": 10,
         "w": 10,
         "x": 0,
-        "y": 23
+        "y": 18
       },
       "id": 47,
       "options": {
@@ -1324,7 +1118,7 @@
         "h": 5,
         "w": 12,
         "x": 11,
-        "y": 23
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1434,7 +1228,7 @@
         "h": 5,
         "w": 12,
         "x": 11,
-        "y": 28
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 60,
@@ -1529,7 +1323,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 28
       },
       "id": 32,
       "panels": [],
@@ -1562,7 +1356,7 @@
         "h": 7,
         "w": 2,
         "x": 0,
-        "y": 34
+        "y": 29
       },
       "id": 41,
       "options": {
@@ -1616,7 +1410,7 @@
         "h": 7,
         "w": 4,
         "x": 2,
-        "y": 34
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 63,
@@ -1719,7 +1513,7 @@
         "h": 7,
         "w": 4,
         "x": 6,
-        "y": 34
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 73,
@@ -1828,7 +1622,7 @@
         "h": 7,
         "w": 3,
         "x": 10,
-        "y": 34
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 91,
@@ -1937,7 +1731,7 @@
         "h": 7,
         "w": 11,
         "x": 13,
-        "y": 34
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 77,
@@ -2064,7 +1858,7 @@
         "h": 7,
         "w": 2,
         "x": 0,
-        "y": 41
+        "y": 36
       },
       "id": 62,
       "options": {
@@ -2115,7 +1909,7 @@
         "h": 7,
         "w": 4,
         "x": 2,
-        "y": 41
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 61,
@@ -2213,7 +2007,7 @@
         "h": 7,
         "w": 4,
         "x": 6,
-        "y": 41
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 71,
@@ -2321,7 +2115,7 @@
         "h": 7,
         "w": 3,
         "x": 10,
-        "y": 41
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 90,
@@ -2423,7 +2217,7 @@
         "h": 7,
         "w": 11,
         "x": 13,
-        "y": 41
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 89,
@@ -2553,7 +2347,7 @@
         "h": 6,
         "w": 2,
         "x": 0,
-        "y": 48
+        "y": 43
       },
       "id": 42,
       "options": {
@@ -2605,7 +2399,7 @@
         "h": 6,
         "w": 10,
         "x": 2,
-        "y": 48
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 27,
@@ -2706,7 +2500,7 @@
         "h": 6,
         "w": 11,
         "x": 13,
-        "y": 48
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 23,
@@ -2830,7 +2624,7 @@
         "h": 6,
         "w": 2,
         "x": 0,
-        "y": 54
+        "y": 49
       },
       "id": 44,
       "options": {
@@ -2890,7 +2684,7 @@
         "h": 6,
         "w": 10,
         "x": 2,
-        "y": 54
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 17,
@@ -3002,7 +2796,7 @@
         "h": 6,
         "w": 11,
         "x": 13,
-        "y": 54
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 58,
@@ -3122,7 +2916,7 @@
         "h": 6,
         "w": 11,
         "x": 13,
-        "y": 60
+        "y": 55
       },
       "hiddenSeries": false,
       "id": 66,
@@ -3248,7 +3042,7 @@
         "h": 7,
         "w": 11,
         "x": 13,
-        "y": 66
+        "y": 61
       },
       "hiddenSeries": false,
       "id": 54,
@@ -3357,7 +3151,7 @@
         "h": 6,
         "w": 11,
         "x": 13,
-        "y": 73
+        "y": 68
       },
       "hiddenSeries": false,
       "id": 18,
@@ -3469,7 +3263,7 @@
         "h": 6,
         "w": 4,
         "x": 12,
-        "y": 79
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 8,
@@ -3574,7 +3368,7 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 79
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 57,
@@ -3671,7 +3465,7 @@
         "h": 6,
         "w": 4,
         "x": 20,
-        "y": 79
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 29,
@@ -3768,7 +3562,7 @@
         "h": 6,
         "w": 4,
         "x": 12,
-        "y": 85
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 28,
@@ -3865,7 +3659,7 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 85
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 59,
@@ -3962,7 +3756,7 @@
         "h": 6,
         "w": 4,
         "x": 20,
-        "y": 85
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 30,
@@ -4059,7 +3853,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 91
+        "y": 86
       },
       "hiddenSeries": false,
       "id": 81,
