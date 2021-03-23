@@ -63,7 +63,7 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 5,
+        "w": 6,
         "x": 0,
         "y": 1
       },
@@ -120,7 +120,7 @@
       "gridPos": {
         "h": 5,
         "w": 5,
-        "x": 5,
+        "x": 6,
         "y": 1
       },
       "id": 12,
@@ -176,7 +176,7 @@
       "gridPos": {
         "h": 5,
         "w": 6,
-        "x": 10,
+        "x": 11,
         "y": 1
       },
       "id": 14,
@@ -231,8 +231,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 8,
-        "x": 16,
+        "w": 7,
+        "x": 17,
         "y": 1
       },
       "id": 92,
@@ -264,7 +264,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Finalization Time",
+      "title": "Finalization Time(s)",
       "type": "stat"
     },
     {
@@ -334,7 +334,7 @@
           "expr": "chain_height{job=\"node\"}",
           "format": "time_series",
           "interval": "",
-          "legendFormat": "{{hostname}}",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -408,13 +408,14 @@
       "hiddenSeries": false,
       "id": 50,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -509,13 +510,14 @@
       "hiddenSeries": false,
       "id": 2,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -536,7 +538,7 @@
         {
           "expr": "amount_of_blocks{job=\"node\"}",
           "interval": "",
-          "legendFormat": "{{hostname}}",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -603,7 +605,7 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 5,
-        "w": 6,
+        "w": 7,
         "x": 17,
         "y": 7
       },
@@ -617,7 +619,7 @@
         "hideZero": true,
         "max": false,
         "min": false,
-        "rightSide": true,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
@@ -711,14 +713,15 @@
       "hiddenSeries": false,
       "id": 85,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -742,20 +745,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "max(chain_height{job=\"node\"})",
+          "expr": "chain_height{job=\"node\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
-          "legendFormat": "Block Height",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
-        },
-        {
-          "expr": "timestamp(changes(chain_height{job=\"node\"}[30s]) > 0) * 1000",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{hostname}}",
-          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -828,13 +824,14 @@
       "hiddenSeries": false,
       "id": 87,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -858,19 +855,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "max(current_era{job=\"node\"})",
+          "expr": "current_era{job=\"node\"}",
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "Era Count",
+          "legendFormat": "{{instance}}",
           "refId": "B"
-        },
-        {
-          "expr": "timestamp(changes(current_era{job=\"node\"}[30s]) > 0) * 1000",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{hostname}}",
-          "refId": "C"
         }
       ],
       "thresholds": [],
@@ -943,13 +933,14 @@
       "hiddenSeries": false,
       "id": 67,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -970,7 +961,7 @@
         {
           "expr": "timestamp(changes(amount_of_blocks{job=\"node\"}[30s]) > 0) * 1000",
           "interval": "",
-          "legendFormat": "{{hostname}}",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -1123,14 +1114,15 @@
       "hiddenSeries": false,
       "id": 25,
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 2,
@@ -1149,7 +1141,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "(node_filesystem_free_bytes{fstype=\"ext4\", job=\"node-exporter\"})",
+          "expr": "node_filesystem_free_bytes{fstype=\"ext4\", job=\"node-exporter\"}",
           "instant": false,
           "interval": "",
           "legendFormat": "{{ instance }}",
@@ -1233,14 +1225,15 @@
       "hiddenSeries": false,
       "id": 60,
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 2,
@@ -1447,7 +1440,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "pending: {{instance}}",
+          "legendFormat": "pending_deploys",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -1546,13 +1539,6 @@
       "stack": false,
       "steppedLine": true,
       "targets": [
-        {
-          "expr": "contract_runtime_run_execute_sum{job=\"node\"} / contract_runtime_run_execute_count{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "count {{instance}}",
-          "refId": "E"
-        },
         {
           "expr": "histogram_quantile(0.99, rate(contract_runtime_apply_commit_bucket{job=\"node\"}[30s]))",
           "hide": false,
@@ -1766,22 +1752,8 @@
           "expr": "allocated_ram_bytes{job=\"node\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "allocated: [{{hostname}}]",
+          "legendFormat": "{{instance}}",
           "refId": "C"
-        },
-        {
-          "expr": "consumed_ram_bytes{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "consumed: [{{hostname}}]",
-          "refId": "B"
-        },
-        {
-          "expr": "total_ram_bytes{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "total: [{{hostname}}]",
-          "refId": "A"
         }
       ],
       "thresholds": [
@@ -2041,17 +2013,10 @@
       "steppedLine": true,
       "targets": [
         {
-          "expr": "contract_runtime_run_execute_sum{job=\"node\"} / contract_runtime_run_execute_count{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "count {{instance}}",
-          "refId": "E"
-        },
-        {
           "expr": "histogram_quantile(0.95, contract_runtime_run_execute_bucket{job=\"node\"})",
           "hide": false,
           "interval": "",
-          "legendFormat": "p95  {{instance}}",
+          "legendFormat": "{{instance}}",
           "refId": "A"
         }
       ],
@@ -2249,25 +2214,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "allocated_ram_bytes{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "allocated: [{{hostname}}]",
-          "refId": "C"
-        },
-        {
           "expr": "consumed_ram_bytes{job=\"node\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "consumed: [{{hostname}}]",
+          "legendFormat": "{{instance}}",
           "refId": "B"
-        },
-        {
-          "expr": "total_ram_bytes{job=\"node\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "total: [{{hostname}}]",
-          "refId": "A"
         }
       ],
       "thresholds": [
@@ -2432,7 +2383,7 @@
         {
           "expr": "scheduler_queue_total_count{job=\"node\"}",
           "interval": "",
-          "legendFormat": "scheduled: {{ hostname }}",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -2532,17 +2483,17 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "node_memory_MemFree_bytes{job=\"node-exporter\"}",
+          "expr": "node_memory_MemAvailable_bytes{job=\"node-exporter\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "free: [{{hostname}}]",
+          "legendFormat": "Available",
           "refId": "C"
         },
         {
           "expr": "avg(node_memory_MemTotal_bytes{job=\"node-exporter\"})",
           "hide": false,
           "interval": "",
-          "legendFormat": "Max mem [{{hostname}}]",
+          "legendFormat": "Total",
           "refId": "A"
         }
       ],
@@ -2559,7 +2510,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Free Mem Vs Total Mem",
+      "title": "Free Available Vs Total Mem",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -2802,11 +2753,11 @@
       "id": 58,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": false,
+        "avg": true,
+        "current": true,
         "max": true,
         "min": true,
-        "rightSide": true,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
@@ -2828,19 +2779,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "(sum(node_memory_MemTotal_bytes{job=\"node-exporter\"}) by (hostname) - sum(node_memory_MemFree_bytes{job=\"node-exporter\"}) by (hostname))",
+          "expr": "node_memory_MemTotal_bytes{job=\"node-exporter\"} - node_memory_MemAvailable_bytes{job=\"node-exporter\"}",
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "used: [{{hostname}}]",
+          "legendFormat": "{{instance}}",
           "refId": "B"
-        },
-        {
-          "expr": "((node_memory_MemTotal_bytes{job=\"node-exporter\"}) - (node_memory_MemFree_bytes{job=\"node-exporter\"}) )",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "used: [{{hostname}}]",
-          "refId": "A"
         }
       ],
       "thresholds": [
@@ -2922,11 +2866,11 @@
       "id": 66,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": false,
+        "avg": true,
+        "current": true,
         "max": true,
         "min": true,
-        "rightSide": true,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
@@ -2948,24 +2892,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "(sum(node_memory_MemTotal_bytes{job=\"node-exporter\"}) by (hostname) - sum(node_memory_MemFree_bytes{job=\"node-exporter\"}) by (hostname))",
-          "hide": true,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "used: [{{hostname}}]",
-          "refId": "B"
-        },
-        {
-          "expr": "((node_memory_MemTotal_bytes{job=\"node-exporter\"}) - (node_memory_MemFree_bytes{job=\"node-exporter\"}) )",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "used: [{{hostname}}]",
-          "refId": "A"
-        },
-        {
           "expr": "node_memory_MemAvailable_bytes{job=\"node-exporter\"}",
           "interval": "",
-          "legendFormat": "available: [{{hostname}}]",
+          "legendFormat": "{{instance}}",
           "refId": "C"
         }
       ],
@@ -3048,11 +2977,11 @@
       "id": 54,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
-        "current": false,
+        "avg": true,
+        "current": true,
         "max": true,
         "min": true,
-        "rightSide": true,
+        "rightSide": false,
         "show": true,
         "total": false,
         "values": true
@@ -3077,7 +3006,7 @@
           "expr": "mem_total{job=\"node\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{hostname}}",
+          "legendFormat": "{{instance}}",
           "refId": "C"
         }
       ],
@@ -3094,7 +3023,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Mem Total",
+      "title": "Memory used by casper-node",
       "tooltip": {
         "shared": false,
         "sort": 0,
@@ -3149,121 +3078,9 @@
       "fillGradient": 1,
       "gridPos": {
         "h": 6,
-        "w": 11,
-        "x": 13,
-        "y": 68
-      },
-      "hiddenSeries": false,
-      "id": 18,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 3,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.4.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [
-        {}
-      ],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "expr": "sum(mem_total{job=\"node\"}) by (hostname) / sum(node_memory_MemTotal_bytes{job=\"node-exporter\"}) by (hostname) * 100 ",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{hostname}}",
-          "queryType": "randomWalk",
-          "refId": "A"
-        },
-        {
-          "expr": "(sum(node_memory_MemTotal_bytes{job=\"node-exporter\"}) by (hostname) - sum(node_memory_MemFree_bytes{job=\"node-exporter\"}) by (hostname))",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Application Mem Usage (%)",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "transformations": [],
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 2,
-          "format": "none",
-          "label": "%",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "decimals": 0,
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "fill": 0,
-      "fillGradient": 1,
-      "gridPos": {
-        "h": 6,
         "w": 4,
         "x": 12,
-        "y": 74
+        "y": 68
       },
       "hiddenSeries": false,
       "id": 8,
@@ -3301,7 +3118,7 @@
           "hide": false,
           "instant": false,
           "interval": "",
-          "legendFormat": "{{hostname}}",
+          "legendFormat": "{{instance}}",
           "queryType": "randomWalk",
           "refId": "A"
         }
@@ -3368,7 +3185,7 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 74
+        "y": 68
       },
       "hiddenSeries": false,
       "id": 57,
@@ -3465,7 +3282,7 @@
         "h": 6,
         "w": 4,
         "x": 20,
-        "y": 74
+        "y": 68
       },
       "hiddenSeries": false,
       "id": 29,
@@ -3562,7 +3379,7 @@
         "h": 6,
         "w": 4,
         "x": 12,
-        "y": 80
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 28,
@@ -3659,7 +3476,7 @@
         "h": 6,
         "w": 4,
         "x": 16,
-        "y": 80
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 59,
@@ -3756,7 +3573,7 @@
         "h": 6,
         "w": 4,
         "x": 20,
-        "y": 80
+        "y": 74
       },
       "hiddenSeries": false,
       "id": 30,
@@ -3853,7 +3670,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 86
+        "y": 80
       },
       "hiddenSeries": false,
       "id": 81,
@@ -3892,26 +3709,6 @@
           "legendFormat": "max",
           "queryType": "randomWalk",
           "refId": "A"
-        },
-        {
-          "expr": "quantile( 0.5, (address_gossiper_items_gossiped_onwards{job=\"node\"} / address_gossiper_items_received{job=\"node\"}) * 100)",
-          "format": "time_series",
-          "hide": true,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "median",
-          "queryType": "randomWalk",
-          "refId": "C"
-        },
-        {
-          "expr": "min((address_gossiper_items_gossiped_onwards{job=\"node\"} / address_gossiper_items_received{job=\"node\"'}) * 100)",
-          "format": "time_series",
-          "hide": true,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "min",
-          "queryType": "randomWalk",
-          "refId": "B"
         }
       ],
       "thresholds": [],
