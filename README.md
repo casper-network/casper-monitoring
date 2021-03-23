@@ -13,10 +13,10 @@ ie. `./setup_casper_monitoring.sh <node_ip> <node_port>`
 
 # Run
 ### Start Containers
-docker-compose up -d
+`docker-compose up -d`
 
 ### Teardown Containers
-docker-compose down
+`docker-compose down`
 
 # View
 Note: Assumes you are browsing from the box running the containers. Otherwise update \
