@@ -15,4 +15,4 @@ datasources:
   # Set the X axis resolution on time series to the Prometheus
   # scrape interval so we don't lose observations if possible.
   jsonData:
-    timeInterval: 5s
+    timeInterval: 15s
