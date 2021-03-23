@@ -21,9 +21,9 @@ ie. `./setup_casper_monitoring.sh <node_ip> <node_port>`
 # View
 Note: Assumes you are browsing from the box running the containers. Otherwise update \
 localhost to an IP Address.
-- Grafana: http://localhost:3000
+- Grafana: `http://localhost:3000`
     - Default Username and Password: admin, admin
-- Prometheus: http://localhost:9090
+- Prometheus: `http://localhost:9090`
 
 # Docs
 - Grafana: https://grafana.com/docs/
@@ -35,7 +35,7 @@ This requires node-exporter be setup on the target host. By default it is setup 
 port 9100. The grafana dashboard will report `No data` for some panels if not used. \
 See: https://github.com/prometheus/node_exporter for more details.
 
-- To view all metrics associated with a job, browse to http://localhost:9090/graph and search \
+- To view all metrics associated with a job, browse to `http://localhost:9090/graph` and search \
 for the job in question.
     - i.e: {job="node"}
     - i.e: {job="node-exporter"}
