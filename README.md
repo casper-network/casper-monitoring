@@ -28,3 +28,8 @@ There is an example of utilizing node-exporter for scraping host level metrics. 
 This requires node-exporter be setup on the target host. By default it is setup on \
 port 9100. The grafana dashboard will report `No data` for some panels if not used. \
 See: https://github.com/prometheus/node_exporter for more details.
+
+To view all metrics associated with a job, browse to http://localhost:9090/graph and search \
+for the job in question.
+- i.e: {job="node"}
+- i.e: {job="node-exporter"}
