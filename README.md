@@ -1,5 +1,5 @@
 # Casper-Monitoring
-Example utilizing Prometheus and Grafana to monitor the casper-node.
+Example utilizing Prometheus and Grafana to monitor the casper-node.\
 NOTE: This is just an example and is not recommeneded for production useage.
 
 # Dependencies
