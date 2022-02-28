@@ -33,5 +33,6 @@ services:
     image: prom/node-exporter:latest
     ports:
       - 9200:9200
+      - 9100:9100
     networks:
       - casper-monitoring
