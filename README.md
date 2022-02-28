@@ -9,7 +9,7 @@ Requires:
 
 # Setup
 This will add the supplied IP Address and port as a target to prometheus. \
-ie. `./setup_casper_monitoring.sh <node_ip> <node_port>`
+ie. `./setup_casper_monitoring.sh <node_ip> <node_status_port>`
 
 # Run
 ### Start Containers
